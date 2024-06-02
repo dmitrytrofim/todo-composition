@@ -1,5 +1,7 @@
 <template>
- <li class="flex justify-between rounded-[10px] border overflow-hidden">
+ <li
+  class="flex justify-between rounded-[10px] border overflow-hidden cursor-grab active:cursor-grabbing"
+ >
   <button
    class="shrink-0 w-[30px] font-700 text-[white] bg-[black]"
    type="button"
@@ -17,7 +19,9 @@
 </template>
 
 <script lang="ts" setup>
-defineProps(['mes']);
+defineProps({
+ mes: String,
+});
 </script>
 
 <style scoped></style>
