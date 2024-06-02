@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts" setup>
-import VContainer from '@components/commons/VContainer.vue';
+import VContainer from '@/components/commons/VContainer.vue';
 // import { RouterLink } from 'vue-router';
 </script>
 

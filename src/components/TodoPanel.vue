@@ -16,8 +16,8 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { useTodoStore } from '@store/index';
-import BtnPanel from '@components/BtnPanel.vue';
+import { useTodoStore } from '@/store/index';
+import BtnPanel from '@/components/BtnPanel.vue';
 
 const input = ref(null);
 const store = useTodoStore();

@@ -6,8 +6,8 @@
 </template>
 
 <script lang="ts" setup>
-import { useTodoStore } from '@store/index';
-import TodoItem from '@components/TodoItem.vue';
+import { useTodoStore } from '@/store';
+import TodoItem from '@/components/TodoItem.vue';
 const store = useTodoStore();
 </script>
 
