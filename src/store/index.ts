@@ -11,5 +11,8 @@ export const useTodoStore = defineStore('todo', () => {
  function addItem(text) {
   list.value.push({ mes: text, id: Date.now() });
  }
- return { list, addItem };
+ function resetList() {
+  list.value = [];
+ }
+ return { list, addItem, resetList };
 });
