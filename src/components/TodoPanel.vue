@@ -55,6 +55,7 @@ function resetField() {
 }
 
 function resetList() {
+ if (store.list.length === 0) return;
  if (!confirm('Are you sure?')) return;
  store.resetList();
  field.value!.focus();

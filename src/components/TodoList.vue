@@ -1,7 +1,14 @@
 <template>
  <h2 class="text-[24px] text-center mb-[10px]">Список задач...</h2>
  <ul class="flex flex-col gap-[5px]">
-  <TodoItem v-for="item in store.list" :key="item.id" :mes="item.mes" />
+  <TodoItem
+   v-for="todo in store.list"
+   :key="todo.id"
+   :complete="todo.complete"
+   @complete="store.completeTodo(todo)"
+   @remove="store.removeTodo(todo)"
+   :mes="todo.mes"
+  />
  </ul>
 </template>
 
