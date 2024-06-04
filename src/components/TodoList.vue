@@ -6,7 +6,6 @@
   class="dragArea list-group w-full flex flex-col gap-[5px]"
   :list="store.list"
   tag="ul"
-  @end="onEnd"
  >
   <transition-group name="list">
    <TodoItem
@@ -25,15 +24,14 @@
 import { useTodoStore } from '@/store';
 import { VueDraggableNext } from 'vue-draggable-next';
 import TodoItem from '@/components/TodoItem.vue';
-import { onMounted } from 'vue';
 const draggable = VueDraggableNext;
 const store = useTodoStore();
-onMounted(() => {
- store.todoListMount();
-});
-function onEnd() {
- store.refreshLocalStorageDrag();
-}
+store.$subscribe(
+ () => {
+  store.addLocalStorage();
+ },
+ { detached: true }
+);
 </script>
 
 <style scoped>
