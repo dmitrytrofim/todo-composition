@@ -7,14 +7,16 @@
   :list="store.list"
   tag="ul"
  >
-  <TodoItem
-   v-for="todo in store.list"
-   :key="todo.id"
-   :complete="todo.complete"
-   @complete="store.completeTodo(todo)"
-   @remove="store.removeTodo(todo)"
-   :mes="todo.mes"
-  />
+  <transition-group name="list">
+   <TodoItem
+    v-for="todo in store.list"
+    :key="todo.id"
+    :complete="todo.complete"
+    @complete="store.completeTodo(todo)"
+    @remove="store.removeTodo(todo)"
+    :mes="todo.mes"
+   />
+  </transition-group>
  </draggable>
 </template>
 
@@ -26,4 +28,19 @@ const draggable = VueDraggableNext;
 const store = useTodoStore();
 </script>
 
-<style scoped></style>
+<style scoped>
+.list-enter-active {
+ transition: all 0.5s ease;
+}
+.list-leave-active {
+ transition: all 0.3s ease;
+}
+.list-enter-from {
+ opacity: 0;
+ transform: translateY(-20px);
+}
+.list-leave-to {
+ opacity: 0;
+ transform: translateX(20px);
+}
+</style>

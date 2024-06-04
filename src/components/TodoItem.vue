@@ -18,7 +18,7 @@
   <button
    @click="$emit('remove')"
    class="shrink-0 w-[30px] font-500 text-[white] bg-[black]"
-   :class="complete ? 'text-[red]' : ''"
+   :class="complete ? '!text-[red]' : ''"
    type="button"
   >
    &#10006;
